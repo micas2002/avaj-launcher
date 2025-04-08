@@ -1,6 +1,4 @@
-package aircraftfactory;
-
-import coordinates.Coordinates;
+package aircraft;
 
 // Singleton
 public class AircraftFactory {
