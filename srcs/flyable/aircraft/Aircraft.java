@@ -3,7 +3,7 @@ package aircraft;
 import flyable.Flyable;
 import flyable.Coordinates;
 
-public class Aircraft extends Flyable {
+public abstract class Aircraft extends Flyable {
 	protected long			id;
 	protected String		name;
 	protected Coordinates	coordinates;
@@ -14,5 +14,15 @@ public class Aircraft extends Flyable {
 		this.coordinates = p_coordinates;
 	};
 
-	
+	protected long getId() {
+		return (this.id);
+	}
+
+	protected String getName() {
+		return (this.name);
+	}
+
+	protected Coordinates getCoordinates() {
+		return (this.coordinates);
+	}
 }
