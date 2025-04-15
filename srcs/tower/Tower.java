@@ -11,8 +11,7 @@ public class Tower {
 	};
 
 	public void	unregister(Flyable p_flyable) {
-		// add index system
-		// this.observers.remove();
+		this.observers.remove(p_flyable);
 	};
 
 	protected void	conditionChanged() {};

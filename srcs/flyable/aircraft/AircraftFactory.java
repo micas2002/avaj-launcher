@@ -20,7 +20,7 @@ public class AircraftFactory implements IAircraftFactory {
 		if (instance == null)
 			instance = new AircraftFactory();
 
-		return  (instance);
+		return (instance);
 	}
 
 	@Override
