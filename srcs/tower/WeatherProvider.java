@@ -1,9 +1,8 @@
 package weatherprovider;
 
-// Singleton
 public class WeatherProvider {
 	private static WeatherProvider instance = null;
-	private String[]	weather;
+	private String[] weather = {"Rain", "Fog", "Sun", "Snow"};
 
 	private WeatherProvider() {};
 
@@ -14,5 +13,9 @@ public class WeatherProvider {
 		return (instance);
 	}
 	
-	public String	getCurrentWeater(Coordiates p_coordiates) {};
+	public String	getCurrentWeather(Coordiates p_coordiates) {
+		int weatherType = (p_coordiates.getLongitude() + p_coordiates.getLatitude() + p_coordiates.getHeight()) % 4;
+
+		return (this.weather[weatherType]);
+	};
 }
