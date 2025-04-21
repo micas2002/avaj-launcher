@@ -1,7 +1,7 @@
 package aircraft;
 
-import flyable.Flyable;
 import flyable.Coordinates;
+import flyable.Flyable;
 
 public abstract class Aircraft extends Flyable {
 	protected long			id;
@@ -24,5 +24,9 @@ public abstract class Aircraft extends Flyable {
 
 	protected Coordinates getCoordinates() {
 		return (this.coordinates);
+	}
+
+	protected void printMessage(String p_message) {
+		System.out.println(p_message);
 	}
 }

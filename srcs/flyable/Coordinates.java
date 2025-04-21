@@ -1,9 +1,9 @@
 package flyable;
 
 public class Coordinates {
-	final private int	longitude;
-	final private int	latitude;
-	final private int	height;
+	private int	longitude;
+	private int	latitude;
+	private int	height;
 
 	Coordinates(int p_longitude, int p_latitude, int p_height) {
 		this.longitude = p_longitude;
@@ -21,5 +21,17 @@ public class Coordinates {
 
 	public int getHeight() {
 		return height;
+	};
+
+	public void setLongitude(int p_longitude) {
+		this.longitude = p_longitude;
+	};
+
+	public void setLatitude(int p_latitude) {
+		this.latitude = p_latitude;
+	};
+
+	public void setHeight(int p_height) {
+		this.height = p_height;
 	};
 }
