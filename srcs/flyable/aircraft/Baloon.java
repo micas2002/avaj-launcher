@@ -1,6 +1,7 @@
-package aircraft;
+package flyable.aircraft;
 
 import flyable.Coordinates;
+import tower.WeatherTower;
 
 public class Baloon extends Aircraft {
 	public Baloon(long p_id, String p_name, Coordinates p_coordinates) {
@@ -9,7 +10,8 @@ public class Baloon extends Aircraft {
 
 	@Override
 	public void updateConditions() {
-		String weather = weatherTower.getWeather(this.coordinates);
+		WeatherTower tower = getWeatherTower();
+		String weather = tower.getWeather(this.coordinates);
 
 		switch (weather) {
 			case "Sun" -> {

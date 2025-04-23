@@ -1,4 +1,4 @@
-package aircraft;
+package flyable.aircraft;
 
 import flyable.Coordinates;
 

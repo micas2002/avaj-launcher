@@ -1,6 +1,11 @@
+import flyable.Coordinates;
+import flyable.aircraft.AircraftFactory;
+import flyable.aircraft.Baloon;
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
+
+import tower.WeatherTower;
 
 public class Main {
 	private static int					nSimRun = 0;
@@ -33,6 +38,12 @@ public class Main {
 				throw new Exception("Wrong number of arguments");
 
 			checkInput(args[0]);
+
+			WeatherTower weatherTower = new WeatherTower();
+			AircraftFactory aircraftFactory = AircraftFactory.getInstance();
+			Coordinates coordinates = Coordinates.newCoordinates(2, 3, 20);
+			Baloon b1 = aircraftFactory.newAircraft("Baloon", "B1", coordinates);
+
 		}
 		catch (Exception e) {
 			System.out.print(e);

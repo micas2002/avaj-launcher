@@ -1,10 +1,7 @@
 package flyable.aircraft;
 
-import aircraft.Baloon;
-import aircraft.Helicopter;
-import aircraft.JetPlane;
-import flyable.Flyable;
 import flyable.Coordinates;
+import flyable.Flyable;
 
 interface IAircraftFactory {
 	Flyable	newAircraft(String p_type, String p_name, Coordinates p_coordinates);
@@ -24,7 +21,7 @@ public class AircraftFactory implements IAircraftFactory {
 	}
 
 	@Override
-	public Flyable	newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
+	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
 		return switch (p_type) {
 			case "Baloon" -> new Baloon(++id, p_name, p_coordinates);
 			case "JetPlane" -> new JetPlane(++id, p_name, p_coordinates);
