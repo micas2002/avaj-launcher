@@ -12,7 +12,7 @@ public abstract class Aircraft extends Flyable {
 		this.id = p_id;
 		this.name = p_name;
 		this.coordinates = p_coordinates;
-	};
+	}
 
 	protected long getId() {
 		return (this.id);

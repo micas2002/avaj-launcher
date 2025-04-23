@@ -28,5 +28,5 @@ public class AircraftFactory implements IAircraftFactory {
 			case "Helicopter" -> new Helicopter(++id, p_name, p_coordinates);
 			default -> null;
 		};
-	};
-;}
+	}
+}

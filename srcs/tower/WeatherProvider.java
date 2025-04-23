@@ -19,5 +19,5 @@ public class WeatherProvider {
 		int weatherType = (p_coordiates.getLongitude() + p_coordiates.getLatitude() + p_coordiates.getHeight()) % 4;
 
 		return (this.weather[weatherType]);
-	};
+	}
 }

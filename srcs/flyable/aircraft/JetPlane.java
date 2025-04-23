@@ -5,7 +5,7 @@ import flyable.Coordinates;
 public class JetPlane extends Aircraft {
 	public JetPlane(long p_id, String p_name, Coordinates p_coordinates) {
 		super(p_id, p_name, p_coordinates);
-	};
+	}
 
 	@Override
 	public void updateConditions() {
@@ -33,5 +33,5 @@ public class JetPlane extends Aircraft {
 			case "Sun" -> printMessage(message + "It's a sunny weather. Better get some sun glasses");
 			default -> printMessage(message + "It's snowing. I want to build a snowman");
 		}
-	};
+	}
 }

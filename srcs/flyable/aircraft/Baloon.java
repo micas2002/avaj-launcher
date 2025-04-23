@@ -6,7 +6,7 @@ import tower.WeatherTower;
 public class Baloon extends Aircraft {
 	public Baloon(long p_id, String p_name, Coordinates p_coordinates) {
 		super(p_id, p_name, p_coordinates);
-	};
+	}
 
 	@Override
 	public void updateConditions() {
@@ -35,5 +35,5 @@ public class Baloon extends Aircraft {
 			case "Sun" -> printMessage(message + "It's a sunny weather. Better get some sun glasses");
 			default -> printMessage(message + "It's snowing. I want to build a snowman");
 		}
-	};
+	}
 }
