@@ -8,6 +8,7 @@ public class Tower {
 
 	public void	register(Flyable p_flyable) {
 		this.observers.add(p_flyable);
+		System.out.println("aircraft added");
 	}
 
 	public void	unregister(Flyable p_flyable) {

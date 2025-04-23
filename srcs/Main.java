@@ -42,7 +42,9 @@ public class Main {
 			WeatherTower weatherTower = new WeatherTower();
 			AircraftFactory aircraftFactory = AircraftFactory.getInstance();
 			Coordinates coordinates = Coordinates.newCoordinates(2, 3, 20);
-			Baloon b1 = aircraftFactory.newAircraft("Baloon", "B1", coordinates);
+			Baloon b1 = (Baloon) aircraftFactory.newAircraft("Baloon", "B1", coordinates);
+
+			weatherTower.register(b1);
 
 		}
 		catch (Exception e) {
