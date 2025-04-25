@@ -1,15 +1,14 @@
 import flyable.Coordinates;
+import flyable.aircraft.Aircraft;
 import flyable.aircraft.AircraftFactory;
-import flyable.aircraft.Baloon;
 import java.io.File;
-import java.util.Scanner;
 import java.util.ArrayList;
-
+import java.util.Scanner;
 import tower.WeatherTower;
 
 public class Main {
 	private static int					nSimRun = 0;
-	private static ArrayList<String[]>	aircrafts = new ArrayList<String[]>();
+	private static ArrayList<String[]>	aircrafts = new ArrayList<>();
 
 	public static void checkInput(String input) throws Exception {
 		File file = new File(input);
@@ -32,6 +31,17 @@ public class Main {
 		}
 	}
 
+	public static void runSimulation() {
+		// register aircrafts into tower
+		WeatherTower weatherTower = new WeatherTower();
+		AircraftFactory aircraftFactory = AircraftFactory.getInstance();
+		for (String[] i : aircrafts) {
+			Coordinates coordinates = Coordinates.newCoordinates(Integer.parseInt(i[2]), Integer.parseInt(i[3]), Integer.parseInt(i[4]));
+			Aircraft plane = (Aircraft) aircraftFactory.newAircraft(i[0], i[1], coordinates);
+			weatherTower.register(plane);
+		}
+	}
+
 	public static void main(String[] args) {
 		try {
 			if (args.length != 1)
@@ -39,13 +49,17 @@ public class Main {
 
 			checkInput(args[0]);
 
-			WeatherTower weatherTower = new WeatherTower();
-			AircraftFactory aircraftFactory = AircraftFactory.getInstance();
-			Coordinates coordinates = Coordinates.newCoordinates(2, 3, 20);
-			Baloon b1 = (Baloon) aircraftFactory.newAircraft("Baloon", "B1", coordinates);
+			runSimulation();
 
-			weatherTower.register(b1);
+			// System.out.println(weatherTower.getWeather(coordinates1));
+			// System.out.println(weatherTower.getWeather(coordinates2));
 
+			// weatherTower.changeWeather();
+
+			// System.out.println(weatherTower.getWeather(coordinates1));
+			// System.out.println(weatherTower.getWeather(coordinates2));
+
+			System.out.println("complete");
 		}
 		catch (Exception e) {
 			System.out.print(e);

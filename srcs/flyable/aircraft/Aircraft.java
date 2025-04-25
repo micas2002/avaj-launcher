@@ -14,19 +14,19 @@ public abstract class Aircraft extends Flyable {
 		this.coordinates = p_coordinates;
 	}
 
-	protected long getId() {
+	public long getId() {
 		return (this.id);
 	}
 
-	protected String getName() {
+	public String getName() {
 		return (this.name);
 	}
 
-	protected Coordinates getCoordinates() {
+	public Coordinates getCoordinates() {
 		return (this.coordinates);
 	}
 
-	protected void printMessage(String p_message) {
+	public void printMessage(String p_message) {
 		System.out.println(p_message);
 	}
 }

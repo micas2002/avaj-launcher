@@ -34,4 +34,10 @@ public class JetPlane extends Aircraft {
 			default -> printMessage(message + "It's snowing. I want to build a snowman");
 		}
 	}
+
+	@Override
+	public String getType() {
+		return ("JetPlane");
+	}
+
 }
