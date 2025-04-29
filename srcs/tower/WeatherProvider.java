@@ -3,7 +3,7 @@ package tower;
 import flyable.Coordinates;
 
 public class WeatherProvider {
-	private static WeatherProvider instance = null;
+	private static WeatherProvider instance;
 	private final String[] weather = {"Rain", "Fog", "Sun", "Snow"};
 
 	private WeatherProvider() {};

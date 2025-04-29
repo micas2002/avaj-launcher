@@ -3,7 +3,7 @@ package flyable;
 import tower.WeatherTower;
 
 public abstract class Flyable {
-	protected WeatherTower	weatherTower;
+	protected WeatherTower weatherTower;
 
 	public WeatherTower	getWeatherTower() {
 		return (this.weatherTower);

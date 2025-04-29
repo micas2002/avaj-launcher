@@ -22,7 +22,7 @@ public class Helicopter extends Aircraft {
 			default -> {}
 		}
 
-		String message = String.format("Baloon#%s(%d): ", this.getName(), this.getId());
+		String message = String.format("Helicopter#%s(%d): ", this.getName(), this.getId());
 
 		if (coordinates.getHeight() == 0)
 			printMessage(message + "landing");

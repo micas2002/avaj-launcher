@@ -1,3 +1,4 @@
+import flyable.Flyable;
 import flyable.Coordinates;
 import flyable.aircraft.Aircraft;
 import flyable.aircraft.AircraftFactory;
@@ -39,6 +40,11 @@ public class Main {
 			Coordinates coordinates = Coordinates.newCoordinates(Integer.parseInt(i[2]), Integer.parseInt(i[3]), Integer.parseInt(i[4]));
 			Aircraft plane = (Aircraft) aircraftFactory.newAircraft(i[0], i[1], coordinates);
 			weatherTower.register(plane);
+		}
+
+		ArrayList<Flyable> observers = weatherTower.getObservers();
+		for (Flyable flyable : observers) {
+			weatherTower.changeWeather();
 		}
 	}
 
