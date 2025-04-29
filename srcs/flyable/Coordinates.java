@@ -8,6 +8,9 @@ public class Coordinates {
 	Coordinates(int p_longitude, int p_latitude, int p_height) {
 		this.longitude = p_longitude;
 		this.latitude = p_latitude;
+
+		if (p_height > 100)
+			p_height = 100;
 		this.height = p_height;
 	}
 
@@ -36,6 +39,8 @@ public class Coordinates {
 	}
 
 	public void setHeight(int p_height) {
+		if (p_height > 100)
+			p_height = 100;
 		this.height = p_height;
 	}
 }
