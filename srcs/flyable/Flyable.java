@@ -13,6 +13,11 @@ public abstract class Flyable {
 		this.weatherTower = p_tower;
 	}
 
+	public void unregisterTower() {
+		weatherTower.unregister(this);
+		this.weatherTower = null;
+	}
+
 	public abstract void updateConditions();
 	public abstract String getType();
 

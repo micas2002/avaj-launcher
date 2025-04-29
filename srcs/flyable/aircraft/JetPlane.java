@@ -24,8 +24,11 @@ public class JetPlane extends Aircraft {
 
 		String message = String.format("JetPlane#%s(%d): ", this.getName(), this.getId());
 
-		if (coordinates.getHeight() == 0)
+		if (coordinates.getHeight() <= 0) {
+			unregisterTower();
 			printMessage(message + "landing");
+			return;
+		}
 
 		switch (weather) {
 			case "Rain" -> printMessage(message + "It's raining. Better watch out for lightings");

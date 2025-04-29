@@ -25,7 +25,8 @@ public class Tower {
 	}
 
 	protected void	conditionChanged() {
-		for (Flyable flyables : this.observers) {
+		ArrayList<Flyable> ob = new ArrayList<>(observers);
+		for (Flyable flyables : ob) {
 			flyables.updateConditions();
 		}
 	}

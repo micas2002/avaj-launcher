@@ -42,8 +42,7 @@ public class Main {
 			weatherTower.register(plane);
 		}
 
-		ArrayList<Flyable> observers = weatherTower.getObservers();
-		for (Flyable flyable : observers) {
+		for (int i = 0; i != nSimRun; i++) {
 			weatherTower.changeWeather();
 		}
 	}
@@ -56,14 +55,6 @@ public class Main {
 			checkInput(args[0]);
 
 			runSimulation();
-
-			// System.out.println(weatherTower.getWeather(coordinates1));
-			// System.out.println(weatherTower.getWeather(coordinates2));
-
-			// weatherTower.changeWeather();
-
-			// System.out.println(weatherTower.getWeather(coordinates1));
-			// System.out.println(weatherTower.getWeather(coordinates2));
 
 			System.out.println("complete");
 		}
