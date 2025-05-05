@@ -1,4 +1,3 @@
-import flyable.Flyable;
 import flyable.Coordinates;
 import flyable.aircraft.Aircraft;
 import flyable.aircraft.AircraftFactory;
@@ -15,20 +14,41 @@ public class Main {
 		File file = new File(input);
 		Scanner myReader = new Scanner(file);
 
+		// check number of times simulation must run
 		String data = myReader.nextLine();
-		nSimRun = Integer.parseInt(data);
+		try {
+			nSimRun = Integer.parseInt(data);
 
-		if (nSimRun < 0)
-			throw new Exception("Number of simutation runs must be a positive integer");
+			if (nSimRun < 0)
+			throw new Exception();
+		}
+		catch (Exception e) {
+			throw new Exception("Number of times to run the simulation must be a positive integer");
+		}
 
+		// store information of every aircraft
 		while (myReader.hasNextLine())
 			aircrafts.add(myReader.nextLine().split(" "));
 
+		// check aircrafts settings
 		for (int i = 0; i != aircrafts.size(); ++i) {
 			if (aircrafts.get(i).length != 5)
 				throw new Exception("Invalid aircraft settings");
-			if (aircrafts.get(i)[0].matches("Baloon|JetPlane|Helicopter") == false)
-				throw new Exception(aircrafts.get(i)[0]);
+
+			if (!aircrafts.get(i)[0].matches("Baloon|JetPlane|Helicopter"))
+				throw new Exception("Invalid aircraft type: " + aircrafts.get(i)[0]);
+
+			try {
+				int x = Integer.parseInt(aircrafts.get(i)[2]);
+				int y = Integer.parseInt(aircrafts.get(i)[3]);
+				int z = Integer.parseInt(aircrafts.get(i)[4]);
+
+				if (x < 0 || y < 0 || z < 0)
+					throw new Exception();
+			}
+			catch (Exception e) {
+				throw new Exception("Coordinates and height must be positive integers");
+			}
 		}
 	}
 
@@ -42,6 +62,7 @@ public class Main {
 			weatherTower.register(plane);
 		}
 
+		// run simulation
 		for (int i = 0; i != nSimRun; i++) {
 			weatherTower.changeWeather();
 		}
@@ -59,7 +80,7 @@ public class Main {
 			System.out.println("complete");
 		}
 		catch (Exception e) {
-			System.out.print(e);
+			System.out.println("Error: " + e.getMessage());
 		}
 	}
 }
