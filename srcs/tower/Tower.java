@@ -22,6 +22,9 @@ public class Tower {
 
 	public void	unregister(Flyable p_flyable) {
 		this.observers.remove(p_flyable);
+
+		String unregisterMessage = "Tower says: %s#%s(%d) unregistered to weather tower.";
+		System.out.println(String.format(unregisterMessage, p_flyable.getType(), ((Aircraft) p_flyable).getName(), ((Aircraft) p_flyable).getId()));
 	}
 
 	protected void	conditionChanged() {

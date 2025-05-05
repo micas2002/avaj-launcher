@@ -27,8 +27,8 @@ public class Baloon extends Aircraft {
 		String message = String.format("Baloon#%s(%d): ", this.getName(), this.getId());
 
 		if (coordinates.getHeight() <= 0) {
-			unregisterTower();
 			printMessage(message + "landing");
+			unregisterTower();
 			return;
 		}
 
