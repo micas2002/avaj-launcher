@@ -25,8 +25,4 @@ public abstract class Aircraft extends Flyable {
 	public Coordinates getCoordinates() {
 		return (this.coordinates);
 	}
-
-	public void printMessage(String p_message) {
-		System.out.println(p_message);
-	}
 }

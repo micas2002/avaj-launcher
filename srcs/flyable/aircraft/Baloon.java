@@ -27,16 +27,16 @@ public class Baloon extends Aircraft {
 		String message = String.format("Baloon#%s(%d): ", this.getName(), this.getId());
 
 		if (coordinates.getHeight() <= 0) {
-			printMessage(message + "landing");
+			LogMessage.writeMessage(message + "landing");
 			unregisterTower();
 			return;
 		}
 
 		switch (weather) {
-			case "Rain" -> printMessage(message + "It's raining. Better watch out for lightings");
-			case "Fog" -> printMessage(message + "There's so much fog. I can't see anything in front of me");
-			case "Sun" -> printMessage(message + "It's a sunny weather. Better get some sun glasses");
-			default -> printMessage(message + "It's snowing. I want to build a snowman");
+			case "Rain" -> LogMessage.writeMessage(message + "It's raining. Better watch out for lightings");
+			case "Fog" -> LogMessage.writeMessage(message + "There's so much fog. I can't see anything in front of me");
+			case "Sun" -> LogMessage.writeMessage(message + "It's a sunny weather. Better get some sun glasses");
+			default -> LogMessage.writeMessage(message + "It's snowing. I want to build a snowman");
 		}
 	}
 

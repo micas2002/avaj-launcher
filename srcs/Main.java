@@ -1,7 +1,9 @@
 import flyable.Coordinates;
 import flyable.aircraft.Aircraft;
 import flyable.aircraft.AircraftFactory;
+import flyable.aircraft.LogMessage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import tower.WeatherTower;
@@ -47,8 +49,18 @@ public class Main {
 					throw new Exception();
 			}
 			catch (Exception e) {
-				throw new Exception("Coordinates and height must be positive integers");
+				throw new Exception("Coordinates and height must be positive integers");	
 			}
+		}
+	}
+
+	public static void createFile() throws IOException {
+		try {
+			File outputFile = new File("simulation.txt");
+			outputFile.createNewFile();
+		}
+		catch (IOException e) {
+			throw (e);
 		}
 	}
 
@@ -77,6 +89,7 @@ public class Main {
 
 			runSimulation();
 
+			LogMessage.closeFile();
 			System.out.println("complete");
 		}
 		catch (Exception e) {
