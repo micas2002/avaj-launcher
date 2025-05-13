@@ -22,7 +22,7 @@ public class Main {
 			nSimRun = Integer.parseInt(data);
 
 			if (nSimRun < 0)
-			throw new Exception();
+				throw new Exception();
 		}
 		catch (Exception e) {
 			throw new Exception("Number of times to run the simulation must be a positive integer");
@@ -45,7 +45,7 @@ public class Main {
 				int y = Integer.parseInt(aircrafts.get(i)[3]);
 				int z = Integer.parseInt(aircrafts.get(i)[4]);
 
-				if (x < 0 || y < 0 || z < 0)
+				if (x < 0 || y < 0 || z < 0 || z > 100)
 					throw new Exception();
 			}
 			catch (Exception e) {
